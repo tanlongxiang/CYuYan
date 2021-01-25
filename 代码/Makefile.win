@@ -1,0 +1,31 @@
+# Project: É¨À×
+# Makefile created by Dev-C++ 5.11
+
+CPP      = g++.exe -D__DEBUG__
+CC       = gcc.exe -D__DEBUG__
+WINDRES  = windres.exe
+OBJ      = É¨À×/main.o É¨À×/game.o
+LINKOBJ  = É¨À×/main.o É¨À×/game.o
+LIBS     = -L"E:/Dev/Dev-Cpp/MinGW64/lib" -L"E:/Dev/Dev-Cpp/MinGW64/x86_64-w64-mingw32/lib" -static-libgcc -g3
+INCS     = -I"E:/Dev/Dev-Cpp/MinGW64/include" -I"E:/Dev/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include"
+CXXINCS  = -I"E:/Dev/Dev-Cpp/MinGW64/include" -I"E:/Dev/Dev-Cpp/MinGW64/x86_64-w64-mingw32/include" -I"E:/Dev/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include" -I"E:/Dev/Dev-Cpp/MinGW64/lib/gcc/x86_64-w64-mingw32/4.9.2/include/c++"
+BIN      = É¨À×.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+É¨À×/main.o: É¨À×/main.c
+	$(CC) -c É¨À×/main.c -o É¨À×/main.o $(CFLAGS)
+
+É¨À×/game.o: É¨À×/game.c
+	$(CC) -c É¨À×/game.c -o É¨À×/game.o $(CFLAGS)
